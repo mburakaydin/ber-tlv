@@ -1,22 +1,23 @@
 /*
  * ber-tlv.c
  *
- *  Created on: 13 Oct 2016
+ *  Created on: Jul 27, 2016
  *      Author: burak.aydin
  */
 
 
-/*
- * ber-tlv.c
- *
- *  Created on: Jul 27, 2016
- *      Author: kentkart
- */
-
-#include <phApp_Init.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
 #include "ber-tlv.h"
 
 
+#ifdef DEBUG
+	#define DEBUG_PRINTF(...) printf(va_args); fflush(stdout);
+#else
+	#define DEBUG_PRINTF(...)
+#endif
 
 #define IS_CONSTRUCTED 0x20
 
